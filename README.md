@@ -1,67 +1,202 @@
-# Airbnb Backend API
+# 🏨 StayNexus – Hotel Booking Backend API
 
-This application provides backend APIs for a hotel management system, including inventory management, booking flow, user authentication, and hotel browsing.
+StayNexus is a scalable backend system for a hotel booking platform, built using Spring Boot.
+It supports complete booking lifecycle management, inventory handling, secure authentication, and payment integration.
 
-![Image](https://github.com/user-attachments/assets/585136d9-05b5-4832-ad37-0a47d4678433)
+---
 
-## Features
+## 🚀 Tech Stack
 
-### Admin Inventory
-- **GET** `/admin/inventory/rooms/{roomId}` - Retrieve inventory of a room
-- **PATCH** `/admin/inventory/rooms/{roomId}` - Update inventory for a room
-- **PUT** `/admin/hotels/{hotelId}/rooms/{roomId}` - Update a room
+* **Backend:** Spring Boot, Spring MVC
+* **Security:** Spring Security + JWT
+* **Database:** MySQL / PostgreSQL (JPA + Hibernate)
+* **API Docs:** Swagger (OpenAPI)
+* **Payment Integration:** Stripe
+* **Build Tool:** Maven
 
-### Booking Flow
-- **GET** `/bookings/{bookingId}/status` - Check booking status
-- **GET** `/admin/hotels/{hotelId}/reports` - Generate hotel booking report
-- **GET** `/admin/hotels/{hotelId}/bookings` - Get all bookings
-- **POST** `/bookings/{bookingId}/payments` - Initiate payment
-- **POST** `/bookings/{bookingId}/cancel` - Cancel a booking
-- **POST** `/bookings/{bookingId}/addGuests` - Add guests to a booking
-- **POST** `/bookings/init` - Initialize a new booking
+---
 
-### Booking Guests
-- **DELETE** `/users/guests/{guestId}` - Remove a guest
-- **GET** `/users/guests` - Get my guests
-- **POST** `/users/guests` - Add a guest
-- **PUT** `/users/guests/{guestId}` - Update a guest
+## 🧠 Architecture
 
-### Hotel Browse
-- **GET** `/hotels/{hotelId}/info` - Get hotel details
-- **GET** `/hotels/search` - Search for hotels
+The project follows a clean layered architecture:
 
-### Hotel Management
-- **DELETE** `/admin/hotels/{hotelId}` - Delete a hotel
-- **GET** `/admin/hotels/{hotelId}` - Get hotel by ID
-- **GET** `/admin/hotels` - Get all admin hotels
-- **PATCH** `/admin/hotels/{hotelId}/activate` - Activate a hotel
-- **POST** `/admin/hotels` - Create a hotel
-- **PUT** `/admin/hotels/{hotelId}` - Update hotel details
+* **Controller Layer** → Handles HTTP requests
+* **Service Layer** → Business logic
+* **Repository Layer** → Database interaction
+* **Security Layer** → Authentication & authorization
 
-### Room Admin Management
-- **DELETE** `/admin/hotels/{hotelId}/rooms/{roomId}` - Delete a room
-- **GET** `/admin/hotels/{hotelId}/rooms/{roomId}` - Get room details
-- **GET** `/admin/hotels/{hotelId}/rooms` - Retrieve all rooms
-- **POST** `/admin/hotels/{hotelId}/rooms` - Create a room
-- **PUT** `/admin/hotels/{hotelId}/rooms/{roomId}` - Update a room
+---
 
-### User Authentication
-- **POST** `/auth/signup` - User signup
-- **POST** `/auth/refresh` - Refresh access token
-- **POST** `/auth/login` - User login
+## 🔐 Authentication & Authorization
 
-### User Profile
-- **DELETE** `/users/guests/{guestId}` - Remove a guest
-- **GET** `/users/guests` - Get my guests
-- **GET** `/users/profile` - Get my profile
-- **GET** `/users/myBookings` - Get my bookings
-- **PATCH** `/users/profile` - Update my profile
-- **POST** `/users/guests` - Add a guest
-- **PUT** `/users/guests/{guestId}` - Update a guest
+* JWT-based authentication
+* Role-based access (Admin/User)
+* Secure API endpoints
 
-### Webhook
-- **POST** `/webhook/payment` - Capture payments
+---
 
-###Schema
-![Image](https://github.com/user-attachments/assets/bc209296-e0f2-48f9-a7ae-65d084e4cb6c)
+## 📦 Features
 
+### 🛠️ Admin Inventory
+
+* GET `/admin/inventory/rooms/{roomId}`
+* PATCH `/admin/inventory/rooms/{roomId}`
+* PUT `/admin/hotels/{hotelId}/rooms/{roomId}`
+
+---
+
+### 📅 Booking Flow
+
+* Initialize booking
+* Add guests
+* Payment integration (Stripe)
+* Booking confirmation & cancellation
+
+Endpoints:
+
+* GET `/bookings/{bookingId}/status`
+* POST `/bookings/init`
+* POST `/bookings/{bookingId}/payments`
+* POST `/bookings/{bookingId}/cancel`
+* POST `/bookings/{bookingId}/addGuests`
+
+---
+
+### 👥 Guest Management
+
+* GET `/users/guests`
+* POST `/users/guests`
+* PUT `/users/guests/{guestId}`
+* DELETE `/users/guests/{guestId}`
+
+---
+
+### 🔍 Hotel Browse
+
+* GET `/hotels/search`
+* GET `/hotels/{hotelId}/info`
+
+---
+
+### 🏨 Hotel Management (Admin)
+
+* POST `/admin/hotels`
+* GET `/admin/hotels`
+* GET `/admin/hotels/{hotelId}`
+* PUT `/admin/hotels/{hotelId}`
+* DELETE `/admin/hotels/{hotelId}`
+* PATCH `/admin/hotels/{hotelId}/activate`
+
+---
+
+### 🛏️ Room Management
+
+* POST `/admin/hotels/{hotelId}/rooms`
+* GET `/admin/hotels/{hotelId}/rooms`
+* GET `/admin/hotels/{hotelId}/rooms/{roomId}`
+* PUT `/admin/hotels/{hotelId}/rooms/{roomId}`
+* DELETE `/admin/hotels/{hotelId}/rooms/{roomId}`
+
+---
+
+### 👤 User Profile
+
+* GET `/users/profile`
+* PATCH `/users/profile`
+* GET `/users/myBookings`
+
+---
+
+### 💳 Payment Webhook
+
+* POST `/webhook/payment`
+
+---
+
+## 🔄 Booking Flow (High-Level)
+
+1. User searches hotels
+2. Selects room & dates
+3. Initializes booking
+4. Adds guests
+5. Payment is initiated
+6. Webhook confirms payment
+7. Booking is finalized
+
+---
+
+## ⚙️ Setup Instructions
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/parvbansal1/StayNexus.git
+cd StayNexus
+```
+
+### 2. Configure database
+
+Update `application.properties`:
+
+```properties
+spring.datasource.url=YOUR_DB_URL
+spring.datasource.username=YOUR_USERNAME
+spring.datasource.password=YOUR_PASSWORD
+```
+
+### 3. Run the application
+
+```bash
+mvn clean install
+mvn spring-boot:run
+```
+
+---
+
+## 📄 API Documentation
+
+Swagger UI available at:
+
+```
+http://localhost:8080/api/v1/swagger-ui/index.html
+```
+
+---
+
+## 🖼️ System Design
+
+### 📊 Architecture Diagram
+
+![Architecture](https://github.com/user-attachments/assets/585136d9-05b5-4832-ad37-0a47d4678433)
+
+### 🗄️ Database Schema
+
+![Schema](https://github.com/user-attachments/assets/bc209296-e0f2-48f9-a7ae-65d084e4cb6c)
+
+---
+
+## 🌟 Key Highlights
+
+* Modular and scalable architecture
+* Secure JWT authentication
+* Real-world booking workflow
+* Payment integration using Stripe
+* Clean REST API design
+
+---
+
+## 📌 Future Improvements
+
+* Caching with Redis
+* Email notifications
+* Rate limiting
+* Microservices architecture
+
+---
+
+## 👨‍💻 Author
+
+**Parv Bansal**
+Backend Developer
+
+---
