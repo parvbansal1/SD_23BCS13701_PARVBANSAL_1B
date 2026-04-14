@@ -15,7 +15,7 @@ public class SwaggerConfig {
     public OpenAPI customOpenAPI() {
         return new OpenAPI()
                 .info(new Info()
-                        .title("Airbnb API")
+                        .title("StayNexus API")
                         .version("1.0")
                         .description("API documentation for the Airbnb Backend application, Created By Parv Bansal"))
                         .addSecurityItem(new SecurityRequirement().addList("BearerAuth"))
