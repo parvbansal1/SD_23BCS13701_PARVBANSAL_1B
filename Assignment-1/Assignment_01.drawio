@@ -1,0 +1,93 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.3.6 Chrome/140.0.7339.249 Electron/38.8.0 Safari/537.36" version="29.3.6">
+  <diagram name="assignment_01" id="HLD_Payment_Styled">
+    <mxGraphModel dx="1111" dy="1637" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Users" parent="1" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#232F3E;fillColor=#ffffff;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.users;" value="Users / Clients" vertex="1">
+          <mxGeometry height="60" width="60" x="50" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="XUnVE3CRLWS4gFF80y2u-1" edge="1" parent="1" source="APIGateway" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="PaymentInterface" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XUnVE3CRLWS4gFF80y2u-3" edge="1" parent="1" source="APIGateway" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="310" y="330" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="APIGateway" parent="1" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.iot_device_gateway;" value="API Gateway &amp; Load Balancer&#xa;- Authentication&#xa;- Authorization&#xa;- Routing&#xa;- Rate Limiting" vertex="1">
+          <mxGeometry height="120" width="127.64" x="250" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="XUnVE3CRLWS4gFF80y2u-5" edge="1" parent="1" source="PaymentInterface" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="UPI">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XUnVE3CRLWS4gFF80y2u-7" edge="1" parent="1" source="PaymentInterface" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="AuditService">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="PaymentInterface" parent="1" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#03B5BB;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws3.chime;" value="Payment Interface" vertex="1">
+          <mxGeometry height="64.5" width="75" x="484" y="87.75" as="geometry" />
+        </mxCell>
+        <mxCell id="CreditCard" parent="1" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#F58536;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws3.flow_logs;" value="Credit Card Payment" vertex="1">
+          <mxGeometry height="60" width="60" x="840" y="-30" as="geometry" />
+        </mxCell>
+        <mxCell id="UPI" parent="1" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#F58536;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws3.flow_logs;" value="UPI Payment" vertex="1">
+          <mxGeometry height="60" width="60" x="840" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="NetBanking" parent="1" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#F58536;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws3.flow_logs;" value="Net Banking Payment" vertex="1">
+          <mxGeometry height="60" width="60" x="780" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="RefundService" parent="1" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#505050;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.office.users.approver;" value="Refund Service" vertex="1">
+          <mxGeometry height="60" width="64.36" x="489.32" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="AuditService" parent="1" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#03B5BB;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws3.chime;" value="Audit Service" vertex="1">
+          <mxGeometry height="64.5" width="75" x="705" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="NotificationService" parent="1" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#F58536;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws3.flow_logs;" value="Notification Service" vertex="1">
+          <mxGeometry height="60" width="60" x="290" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="TransactionDB" parent="1" style="image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;image=img/lib/active_directory/database_server.svg;" value="Transaction DB" vertex="1">
+          <mxGeometry height="90" width="73.8" x="1010" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="RefundDB" parent="1" style="image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;image=img/lib/active_directory/database_server.svg;" value="Refund DB" vertex="1">
+          <mxGeometry height="90" width="73.8" x="640" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="AuditDB" parent="1" style="image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;image=img/lib/active_directory/database_server.svg;" value="Audit DB" vertex="1">
+          <mxGeometry height="90" width="73.8" x="950" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="NotificationDB" parent="1" style="image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;image=img/lib/active_directory/database_server.svg;" value="Notification DB" vertex="1">
+          <mxGeometry height="90" width="73.8" x="50" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="edge1" edge="1" parent="1" source="Users" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" target="APIGateway">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge6" edge="1" parent="1" source="CreditCard" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" target="TransactionDB">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge7" edge="1" parent="1" source="UPI" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" target="TransactionDB">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge8" edge="1" parent="1" source="NetBanking" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" target="TransactionDB">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge9" edge="1" parent="1" source="PaymentInterface" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" target="RefundService">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge10" edge="1" parent="1" source="RefundService" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" target="RefundDB">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge12" edge="1" parent="1" source="AuditService" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" target="AuditDB">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge14" edge="1" parent="1" source="NotificationService" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" target="NotificationDB">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XUnVE3CRLWS4gFF80y2u-4" edge="1" parent="1" source="PaymentInterface" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" target="CreditCard">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XUnVE3CRLWS4gFF80y2u-6" edge="1" parent="1" source="PaymentInterface" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" target="NetBanking">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

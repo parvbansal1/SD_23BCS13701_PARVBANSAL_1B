@@ -23,7 +23,7 @@ public class HotelBrowseController {
     private final InventoryService inventoryService;
     private final HotelService hotelService;
 
-    @GetMapping("/search")
+    @PostMapping("/search")
     @Operation(summary = "Search for hotels", description = "Filter hotels based on location, price, availability, etc.")
     public ResponseEntity<Page<HotelPriceDTO>> searchHotels(@RequestBody HotelSearchRequest hotelSearchRequest) {
 

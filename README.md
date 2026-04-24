@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🏨 StayNexus – Hotel Booking Backend API
 
 StayNexus is a scalable backend system for a hotel booking platform, built using Spring Boot.
@@ -200,3 +201,11 @@ http://localhost:8080/api/v1/swagger-ui/index.html
 Backend Developer
 
 ---
+=======
+
+- 📌 **Name:** PARV BANSAL
+- 🆔 **University ID:** 23BCS13701 
+- 🏫 **Program:** B.E. CSE – Chandigarh University
+- 📚 **Course:** System Design (23CSH-314)
+- 📆 **Semester:** 6th
+>>>>>>> cbcbe97c449b841c6079adceea68c3a7dd00c95f
